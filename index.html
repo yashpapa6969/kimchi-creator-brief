@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KimChi Chic — Creator Brief · THIRD.</title>
+<script defer data-domain="anish743.github.io" src="https://plausible.io/js/script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -192,7 +193,7 @@
     <p class="lead">Each is built from what's selling and what buyers keep asking. Pick the one that fits you.</p>
     <div class="grid g2">
 
-      <div class="angle star">
+      <div class="angle star" data-track="angle_card">
         <span class="tag">⭐ Highest priority</span>
         <h3>1 · The Shade-Match Guide</h3>
         <div class="say">“Banana, translucent, or pink? Here's exactly which Kimchi powder to get for YOUR undertone.”</div>
@@ -200,7 +201,7 @@
         <div class="row"><b>You if</b> You can teach shade-matching (MUA / beauty-savvy).</div>
       </div>
 
-      <div class="angle">
+      <div class="angle" data-track="angle_card">
         <span class="tag">Underserved audience</span>
         <h3>2 · The 40+ / Mature Skin</h3>
         <div class="say">“As a 43-year-old, this is the only setting powder that doesn't sit in my fine lines.”</div>
@@ -208,7 +209,7 @@
         <div class="row"><b>You if</b> You're 40+ or have mature / dry skin.</div>
       </div>
 
-      <div class="angle">
+      <div class="angle" data-track="angle_card">
         <span class="tag">Kills objections</span>
         <h3>3 · The Proof Test</h3>
         <div class="say">“Does the viral Kimchi powder actually pass the flash test?”</div>
@@ -216,7 +217,7 @@
         <div class="row"><b>You if</b> You like a demo-first, show-don't-tell style.</div>
       </div>
 
-      <div class="angle">
+      <div class="angle" data-track="angle_card">
         <span class="tag">Borrowed credibility</span>
         <h3>4 · Beats Prestige</h3>
         <div class="say">“I've tried Huda, Fenty, and Laura Mercier — this $28 powder beats all of them.”</div>
@@ -224,7 +225,7 @@
         <div class="row"><b>You if</b> You own the prestige products to compare.</div>
       </div>
 
-      <div class="angle">
+      <div class="angle" data-track="angle_card">
         <span class="tag">Social proof</span>
         <h3>5 · Half a Million Sold</h3>
         <div class="say">“500,000 of these are sold — here's why everyone's obsessed.”</div>
@@ -318,7 +319,7 @@
     <div class="cta">
       <h2>Talk, prove, offer, repeat</h2>
       <p style="max-width:560px;margin:14px auto 0;font-size:17px;font-weight:600;">Pick an angle, steal a hook, and film it like you're showing a friend. That's the whole recipe.</p>
-      <a class="btn" href="#">Submit your video →</a>
+      <a class="btn" href="#" data-track="submit">Submit your video →</a>
     </div>
   </div>
 </section>
@@ -335,5 +336,11 @@
   </div>
 </footer>
 
+<script>
+  addEventListener('click', e => {
+    const el = e.target.closest('[data-track],a[href^="http"]');
+    if (el && window.plausible) plausible('button_click', { props: { button_label: el.dataset.track || 'outbound' } });
+  });
+</script>
 </body>
 </html>
